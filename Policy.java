@@ -1,5 +1,6 @@
 public class Policy
 {
+   //all variables are set to private
    private String policyNumber;
    private String providerName;
    private String holderFirstName;
@@ -9,6 +10,8 @@ public class Policy
    private double holderHeight;
    private double holderWeight;
    
+   
+   //no-arguments constructor
    public Policy()
    {
       policyNumber = " ";
@@ -21,6 +24,7 @@ public class Policy
       holderWeight = 0.0;
    }
    
+   //arguments constructor
    public Policy(String num, String provider, String fName, String lName, 
                   int age, String status, double height, double weight)
    {
@@ -34,7 +38,7 @@ public class Policy
       holderWeight = weight;
    }
    
-   // Start of methods (setters)
+   // Start of setter methods
    
    public void setPolicyNumber(String num)
    {
@@ -88,7 +92,7 @@ public class Policy
       return providerName;
    }
    
-   public String getFirstname()
+   public String getFirstName()
    {
       return holderFirstName;
    }
