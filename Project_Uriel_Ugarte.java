@@ -56,12 +56,12 @@ public class Project_Uriel_Ugarte
                inputFile.nextLine();
             }
             
-           /** 
+           
            if(smokingStatus.equalsIgnoreCase("smoker"))
                smoker += 1;
             else
                nonsmoker += 1;
-            */
+            
                                           
       //Add objects to ArrayList
       policies.add(new Policy(policyNumber, providerName, holderFirstName, holderLastName, 
@@ -93,8 +93,8 @@ public class Project_Uriel_Ugarte
       
       }
       
-     // System.out.println("The number of policies with a smoker is: "+ smoker);
-      //System.out.println("The number of policies with a non-smoker is: "+ nonsmoker);
+        System.out.println("The number of policies with a smoker is: "+ smoker);
+        System.out.println("The number of policies with a non-smoker is: "+ nonsmoker);
       
       
       /**
