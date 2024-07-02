@@ -204,11 +204,10 @@ public class Policy
    
    public String toString()
    {
-      return String.format("Policy Number: " + policyNumber +
-          "\nProvider Name: " + providerName + "\n" +
-          info.toString() + 
-          "\nPolicyholder's BMI: %.2f\n", getBMI() +
-          "\nPolicy Price: $%.2f\n", getPolicyPrice(getBMI()));
-
+      return String.format("\nPolicy Number: " + policyNumber +
+                           "\nProvider Name: " + providerName + "\n" +
+                           info.toString() + 
+                           "\nPolicyholder's BMI: %.2f\n", getBMI() +
+                           "\nPolicy Price: $%.2f\n", getPolicyPrice(getBMI()));
    }
 }
