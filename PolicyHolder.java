@@ -96,7 +96,7 @@ public class PolicyHolder
          "\nPolicyholder's Age: " + Age +
          "\nPolicyholder's Smoking Status: " + smoke +
          "\nPolicyholder's Height: " + Height + " inches" +
-         "\nPolicyholder's Weight: " + Weight + " pounds";
+         "\nPolicyholder's Weight: " + Weight + " pounds\n";
    }
    
 }
