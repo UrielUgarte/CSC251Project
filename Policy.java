@@ -3,12 +3,13 @@ public class Policy
    //all variables are set to private
    private String policyNumber;
    private String providerName;
-   private String holderFirstName;
-   private String holderLastName;
-   private int holderAge;
-   private String smokingStatus;
-   private double holderHeight;
-   private double holderWeight;
+   //private String holderFirstName;
+   //private String holderLastName;
+   //private int holderAge;
+   //private String smokingStatus;
+   //private double holderHeight;
+   //private double holderWeight;
+   private PolicyHolder info;
    
    
    //no-arguments constructor
@@ -16,15 +17,16 @@ public class Policy
    {
       policyNumber = " ";
       providerName = " ";
-      holderFirstName = " ";
-      holderLastName = " ";
-      holderAge = 0;
-      smokingStatus = " ";
-      holderHeight = 0.0;
-      holderWeight = 0.0;
+      //holderFirstName = " ";
+      //holderLastName = " ";
+      //holderAge = 0;
+      //smokingStatus = " ";
+      //holderHeight = 0.0;
+      //holderWeight = 0.0;
    }
    
    //arguments constructor
+   /**
    public Policy(String num, String provider, String fName, String lName, 
                   int age, String status, double height, double weight)
    {
@@ -36,6 +38,19 @@ public class Policy
       smokingStatus = status;
       holderHeight = height;
       holderWeight = weight;
+   }*/
+   
+   public Policy(String num, String provider, PolicyHolder obj)
+   {
+      policyNumber = num;
+      providerName = provider;
+      //holderFirstName = fName;
+      //holderLastName = lName;
+      //holderAge = age;
+      //smokingStatus = status;
+      //holderHeight = height;
+      //holderWeight = weight;
+      info = new PolicyHolder(obj);
    }
    
    // Start of setter methods
@@ -51,41 +66,46 @@ public class Policy
    {
       providerName = provider;
    }
-   
+   /**
    //@param fName Stores the First Name of customer
    public void setFirstName(String fName)
    {
       holderFirstName = fName;
-   }
-   
+   } */
+   /**
    //@param lName Stores the Last Name of Customer
    public void setLastName(String lName)
    {
       holderLastName = lName;
-   }
-   
+   } */
+   /**
    //@param age Stores the age of customer
    public void setAge(int age)
    {
       holderAge = age;
-   }
-   
+   } */
+   /**
    //@param status Stores the smoking status of the customer
    public void setStatus(String status)
    {
       smokingStatus = status;
-   }
-   
+   } */
+   /**
    //@param height Stores the height in inches 
    public void setHeight(double height)
    {
       holderHeight = height;
-   }
-   
+   } */
+   /**
    //@param weight Stores the weight in pounds
    public void setWeight(double weight)
    {
       holderWeight = weight;
+   } */
+   
+   public void setInfo(PolicyHolder in)
+   {
+      info = new PolicyHolder(in);
    }
    
    //Start of getter methods
@@ -101,41 +121,46 @@ public class Policy
    {
       return providerName;
    }
-   
+   /**
    //@return the first name
    public String getFirstName()
    {
       return holderFirstName;
-   }
-   
+   }  */
+   /**
    //@return The last name
    public String getLastName()
    {
       return holderLastName;
-   }
-   
+   } */
+   /**
    //@return The Age
    public int getAge()
    {
       return holderAge;
-   }
-   
+   } */
+   /**
    //@return the Smoking Status
    public String getStatus()
    {
       return smokingStatus;
-   }
-   
+   } */
+   /**
    //@return The height
    public double getHeight()
    {
       return holderHeight;
-   }
-   
+   } */
+   /**
    //@return The weight
    public double getWeight()
    {
       return holderWeight;
+   } */
+   
+   public PolicyHolder getInfo()
+   {
+      return info;
    }
    
    //Start of calculation methods
@@ -144,7 +169,8 @@ public class Policy
    public double getBMI()
    {
       double BMI;
-      BMI = (holderWeight * 703)/(holderHeight * holderHeight);
+      //BMI = (holderWeight * 703)/(holderHeight * holderHeight);
+      BMI = (info.getWeight1() * 703)/(info.getHeight1() * info.getHeight1());
      return BMI;
    }
    
@@ -155,13 +181,13 @@ public class Policy
       double addFee = 0.0;
       double BMI = bmI;
       
-      if(holderAge > 50)
+      if(info.getAge1() > 50)
       {
          baseFee = baseFee + 75;
       }
       else{}
       
-      if(smokingStatus.equalsIgnoreCase("smoker"))
+      if(info.getSmoke().equalsIgnoreCase("smoker"))
       {
          baseFee = baseFee + 100;
       }
@@ -174,5 +200,15 @@ public class Policy
       else{}
       
      return baseFee + addFee;
+   }
+   
+   public String toString()
+   {
+      return String.format("Policy Number: " + policyNumber +
+          "\nProvider Name: " + providerName + "\n" +
+          info.toString() + 
+          "\nPolicyholder's BMI: %.2f\n", getBMI() +
+          "\nPolicy Price: $%.2f\n", getPolicyPrice(getBMI()));
+
    }
 }
